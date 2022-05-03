@@ -14,6 +14,7 @@ using Xamarin.Forms;
 
 namespace AppService020.Droid
 {
+    [Service]
     public class LocationService_droid : Service
     {
         int counter = 0;
@@ -39,6 +40,8 @@ namespace AppService020.Droid
         }
         public override void OnDestroy()
         {
+            Log.Debug("MyService", "My Service Stoped");
+
             StopSelf();
             counter = 0;
             isRunningTimer = false;
